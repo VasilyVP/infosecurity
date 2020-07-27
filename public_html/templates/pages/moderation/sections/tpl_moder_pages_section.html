@@ -1,0 +1,60 @@
+<!--секция закладки "Страницы ЧОП" -->
+<div class="tab-pane fade" id="nav-sites-management" role="tabpanel" aria-labelledby="nav-sites-management-tab">
+    <div class="container">
+        <div class="row mt-4 mb-5">
+            <div class="col-md-8" id="chop_group">
+                <label for="search_chop_field">ЧОП</label>
+                <input type="search" id="search_chop_field" class="form-control typeahead"
+                    placeholder="название/email/телефон">
+            </div>
+            <div class="col-md-2" id="city_group">
+                <input type="checkbox" id="use_city" name="use_city" checked>
+                <label for="use_city">Учитывать город</label>
+                <input type="search" id="search_chop_city" class="form-control typeahead">
+            </div>
+            <div class="col-md-2">
+                <label>Статус</label>
+                <select id="page_status" class="form-control">
+                    <option value="temp">Временные</option>
+                    <option value="registered">Зарегистрированные</option>
+                </select>
+            </div>
+        </div>
+
+        <form id="pages_form">
+            <div class="row p-1 m-1 border-top d-none" data-function="userInfo">
+                <input type="text" readonly hidden class="form-control-plaintext" data-function="clientID"
+                    name="clientID">
+                <div class="col-md-3">
+                    <a href="#" target="_blank" name="link-to-page">
+                        <input type="text" readonly class="form-control-plaintext" data-function="fullName" name="name">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" target="_blank" name="link-to-pa-page">
+                        <input type="text" readonly class="form-control-plaintext" data-function="email" name="email">
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" readonly class="form-control-plaintext" data-function="city" name="city">
+                </div>
+
+                <!--статус: активный/неактивный-->
+                <div class="col-md-2">
+                    <select class="form-control" data-function="active" name="active">
+                        <option value="1">активна</option>
+                        <option value="0">неактивна</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-center">
+                    <button type="submit" class="btn btn-outline-primary" data-function="save">Сохранить</button>
+                    <i class="ml-2 fas fa-check d-none" style="font-size: 2rem; color: green" data-function="showUpdate"
+                        name="ok"></i>
+                    <i class="ml-2 fas fa-times d-none" style="font-size: 2rem; color: red" data-function="showUpdate"
+                        name="no"></i>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

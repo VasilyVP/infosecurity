@@ -1,0 +1,157 @@
+<!-- Секция Контакты -->
+<div class="container my-2 border">
+    <h5 class="my-2">Контакты</h5>
+
+    <div class="form-group">
+        <div class="bg-light p-3">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-12">
+                    <label for="country">Страна</label>
+                    <select id="country" name="country" class="form-control" form="chop_form" required>
+                        <option value="Россия">Россия</option>
+                        <option value="Украина">Крым</option>
+                        <option value="Украина">Украина</option>
+                        <option value="Беларусь">Беларусь</option>
+                        <option value="Казахстан">Казахстан</option>
+                        <option value="Эстония">Эстония</option>
+                        <option value="Латвия">Латвия</option>
+                        <option value="Литва">Литва</option>
+                        <option value="Азербайджан">Азербайджан</option>
+                        <option value="Армения">Армения</option>
+                        <option value="Грузия">Грузия</option>
+                        <option value="Грузия">Абхазия</option>
+                        <option value="Грузия">Южная Осетия</option>
+                        <option value="Киргизия">Кыргызстан</option>
+                        <option value="Молдова">Молдова</option>
+                        <option value="Таджикистан">Таджикистан</option>
+                        <option value="Туркменистан">Туркменистан</option>
+                        <option value="Узбекистан">Узбекистан</option>
+                    </select>
+                    <input id="public_country" name="public_country" value="Россия" form="chop_form" hidden>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="bg-light p-3">
+            <!--Поля хранения и отображения адреса-->
+            <div id="addresses-collection" data-count="0">
+                <!--name="addresses-collection" -->
+                <!--d-none-->
+                <div class="d-none" name="address-element">
+                    <div class="form-row">
+                        <div class="col">
+                            <small class="form-text text-muted ml-1" name="address-type"></small>
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <div class="col-md-5 my-2">
+                            <input type="search" class="form-control" name="city[]" form="chop_form" readonly>
+                        </div>
+                        <div class="col-md-5 my-2">
+                            <input type="search" class="form-control" name="address[]" form="chop_form" readonly>
+                        </div>
+                        <div class="col-md-1 my-2">
+                            <input type="text" class="form-control" name="office[]" form="chop_form" readonly>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-end my-2">
+                            <i class="far fa-trash-alt fa-2x" name="dell_city"></i>
+                        </div>
+                        <input type="text" name="longitude[]" form="chop_form" hidden>
+                        <input type="text" name="latitude[]" form="chop_form" hidden>
+                        <input type="text" name="city_id[]" form="chop_form" hidden>
+                        <input type="text" name="address_type[]" form="chop_form" hidden>
+                    </div>
+                </div>
+            </div>
+            <!--Поля ввода адреса-->
+            <div class="form-row mb-2" name="city_input">
+                <div class="col-md-5">
+                    <label for="city">Населенный пункт</label>
+                    <input type="search" class="form-control typeahead" id="city">
+                </div>
+                <div class="col-md-5">
+                    <label for="address">Улица, дом, корпус</label>
+                    <input type="search" class="form-control typeahead" id="address">
+                </div>
+                <div class="col-md-1">
+                    <label for="office">Офис</label>
+                    <input type="text" class="form-control" id="office">
+                </div>
+                <div class="col-md-1 d-flex align-items-end my-2 my-md-0">
+                    <i class="far fa-save fa-2x" id="add_city"></i>
+                </div>
+            </div>
+            <div class="form-row mb-2">
+                <div class="col">
+                    <!--<small class="form-text text-muted text-center">Укажите ваш основной адрес, выбирая его из
+                        выпадающего списка, и нажмите "Дискету". Желательно выбрать вариант с регионом.
+                    </small>-->
+                    <small class="form-text text-muted text-center">Введите до трех адресов: филиалов, офисов
+                        или удаленных областей дежурства ГБР. Если вы работаете в населенном пункте, но не имеете там офиса, то
+                        укажите только его название. Все адреса желательно выбирать из выпадающих списков вариантов.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="bg-light p-3">
+            <!--Поля ввода email и сайта-->
+            <div class="form-row mb-2" data-section="email_site_input">
+                <div class="col-md-5">
+                    <label for="chop_site">Сайт</label>
+                    <input type="text" class="form-control" id="chop_site" name="chop_site" form="chop_form"
+                        autocomplete="off" maxlength="50" pattern="^(\S+\.)+\S{2,10}(\S+)*$">
+                </div>
+                <div class="col-md-5">
+                    <label for="chop_email">Email</label>
+                    <input type="email" class="form-control" id="chop_email" name="chop_email" form="chop_form" autocomplete="off" maxlength="40">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="form-group">
+        <div class="bg-light p-3">
+            <p>Другие телефоны:</p>
+-->
+    <!--Поля ввода телефона-->
+    <!--        <div class="form-row mb-2" data-section="phone_input">
+                <div class="col-md-5">
+                    <input type="tel" class="form-control" id="phone" data-function="input_tel" pattern="[0-9\-()+ ]{5,20}">
+                </div>
+                <div class="col-md-5">
+                    <select class="form-control" id="phone_type" data-function="input_tel">
+                        <option value=""></option>
+                        <option value="Коммерческий отдел">Коммерческий отдел</option>
+                        <option value="Сервисная служба">Сервисная служба</option>
+                        <option value="Бухгалтерия">Бухгалтерия</option>
+                        <option value="Управление персоналом">Управление персоналом</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+-->
+    <!--offset-md-1-->
+    <!--            <button class="btn btn-light" data-function="add_tel">Добавить</button>
+                </div>
+            </div>
+-->
+    <!--Поля хранения и отображения телефона -->
+    <!--    <div class="form-row mb-2 d-none" data-section="phone_store">
+        <div class="col-md-5">
+            <input type="text" class="form-control" data-function="store_tel" name="phones[]" form="chop_form" readonly>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" data-function="store_tel" name="phone_types[]" form="chop_form"
+                readonly>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-light" data-function="dell_tel">Удалить</button>
+        </div>
+    </div>
+</div>
+</div>
+-->
+</div>

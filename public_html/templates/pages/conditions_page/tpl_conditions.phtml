@@ -1,0 +1,21 @@
+<!-- Страница Условий сервиса -->
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <meta name="robots" content="noindex,nofollow">
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SIMPLE_SECTION;
+        # секция Контента
+        require TPL_CONDITIONS_SECTION;
+
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+</html>

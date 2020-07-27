@@ -1,0 +1,9 @@
+<!--Секция вывода ссылок поиска организаций по городам-->
+<?php // активируем компонент заполнения городов
+    $cities = new \components\ProviderCitiesComponent();
+?>
+<div class="container nav-container border-top mt-5 pt-3">
+    <ul class="cities-ul text-left p-1">
+        <?=$cities->getCitiesLiList();?>
+    </ul>
+</div>

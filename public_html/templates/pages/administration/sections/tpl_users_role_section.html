@@ -1,0 +1,52 @@
+<div class="tab-pane fade show active" id="nav-users-management" role="tabpanel"
+    aria-labelledby="nav-users-management-tab">
+    <div class="container">
+
+        <div class="row mt-4 mb-5">
+            <div class="col-md-6">
+                <label for="search_field">Пользователь:</label>
+                <input type="search" id="search_field" class="form-control typeahead" placeholder="ФИО/email">
+            </div>
+            <div class="col-md-4 offset-2">
+                <label></label>
+                <nav class="nav nav-pills nav-fill">
+                    <a class="nav-item nav-link" id="admins_pill" data-toggle="pill" href="#">Администраторы</a>
+                    <a class="nav-item nav-link" id="moderators_pill" data-toggle="pill" href="#">Модераторы</a>
+                </nav>
+            </div>
+        </div>
+
+        <form id="users_role_form">
+            <div class="row p-1 m-1 border-top d-none" data-function="userInfo">
+                <div class="col-md-2">
+                    <input type="text" readonly class="form-control-plaintext" data-function="fullName">
+                </div>
+                <div class="col-md-3">
+                    <a href="#" target="_blank" name="link-to-pa-page">
+                        <input type="text" readonly class="form-control-plaintext" data-function="email" name="email">
+                    </a>
+                </div>
+                <!--роль-->
+                <div class="col-md-2">
+                    <select class="form-control" data-function="role" name="role">
+                        <option></option>
+                    </select>
+                </div>
+                <!--статус: активный/неактивный-->
+                <div class="col-md-2">
+                    <select class="form-control" data-function="active" name="active">
+                        <option value="1">активный</option>
+                        <option value="0">заблокированный</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-center">
+                    <button type="button" class="btn btn-outline-primary" data-function="save">Сохранить</button>
+                    <i class="ml-2 fas fa-check d-none" style="font-size: 2rem; color: green"
+                        data-function="showUpdate"></i>
+                    <i class="ml-2 fas fa-times d-none" style="font-size: 2rem; color: red"
+                        data-function="showUpdate"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

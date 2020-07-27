@@ -1,0 +1,79 @@
+<!--Секция окна регистрации пользователя-->
+<script defer {TYPE_MODULE} src="{JS_REGISTRATION_SECTION}"></script>
+<!--Код секции-->
+<div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="registrationModalLabel">Регистрация</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_registration_btn">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form class="px-lg-5" id="user_registration_form" action="#" autocomplete="off">
+                        <img class="d-block mx-auto my-4" src="/imgs/logos/scanox_logo.png" style="inline-size: 5rem">
+
+                        <input type="text" class="form-control form-control-sm mb-3" id="user_surname"
+                            name="user_surname" pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" placeholder="Фамилия*"
+                            autocomplete="off" required>
+
+                        <input type="text" class="form-control form-control-sm  mb-3" id="user_name" name="user_name"
+                            pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" placeholder="Имя*" autocomplete="off" required>
+                        <input type="text" class="form-control form-control-sm mb-3" id="user_patronymic"
+                            name="user_patronymic" pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" placeholder="Отчество"
+                            autocomplete="off">
+                        <input type="email" class="form-control form-control-sm mb-3" id="user_email" name="user_email"
+                            maxlength="40" placeholder="E-mail*" autocomplete="off" required>
+                        <!--
+                        <input type="password" class="form-control form-control-sm mb-3" id="user_password"
+                            name="user_password" minlength="6" maxlength="20" placeholder="Пароль*" autocomplete="new-password"
+                            required>
+                        <h5>
+                            <span class="mb-3 badge" id="password1_ok"></span>
+                        </h5>
+                        <input type="password" class="form-control form-control-sm mb-3" id="user_password2"
+                            minlength="6" maxlength="20" placeholder="Повторите пароль*" autocomplete="new-password" required>
+                        <h5>
+                            <span class="mb-3 badge" id="password2_ok"></span>
+                        </h5>
+                        <small class="form-text text-muted">
+                            Пароль должен содержать от 6 до 20 латинских символов, включая числа и минимум одну
+                            заглавную букву
+                        </small>
+                        -->
+                        <input type="hidden" id="captcha_token" name="captcha_token">
+                    </form>
+                    <div class="custom-control custom-checkbox my-1 mx-lg-4 px-lg-5">
+                        <input class="custom-control-input" type="checkbox" id="conditions_check">
+                        <label class="custom-control-label" for="conditions_check">
+                            <small class="text-muted">Согласен с <a href="/conditions" target="_blank">Условиями
+                                    использования</a></small></label>
+                    </div>
+                    <p class="text-center mx-md-5 mt-4"><b>На указанный e-mail вам будет отправлен пароль для входа
+                            в личный кабинет</b></p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="text-center mx-md-5 d-none" id="notification"></p>
+                <div class="d-flex flex-row justify-content-center mb-5" id="confirm_section">
+                    <button class="btn btn-dark btn-sm d-none" id="register_close" type="button"
+                        data-dismiss="modal">Закрыть
+                    </button>
+                    <button class="btn sx-btn-off btn-sm" id="register_btn" form="user_registration_form"
+                        type="submit" value="Регистрация" disabled>Регистрация
+                        <span class="spinner-border spinner-border-sm text-light d-none" id="spinner" role="status"
+                            aria-hidden="true"></span>
+                    </button>
+                    <i class="fas fa-check ml-2 d-none" style="font-size: 2rem; color: green"
+                        id="registrationStatusOk"></i>
+                    <i class="fas fa-times ml-2 d-none" style="font-size: 2rem; color: red"
+                        id="registrationStatusErr"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

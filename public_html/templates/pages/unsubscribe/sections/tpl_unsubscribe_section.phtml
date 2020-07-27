@@ -1,0 +1,56 @@
+<?php // проверяем токен отписки и если Ok - отписываем
+
+    $mg = new \engines\MailgunEngine();
+    $log = \engines\LogEngine::create();
+    // парсим и проверяем токен и tag
+    $unsObj = $mg->parseCheckUnsubscribeLink([
+        'token' => $_GET['token'] ?? false,
+        'tag' => $_GET['tag'] ?? false,
+        'mailingList' => $_GET['mailingList'] ?? false
+    ]);
+    // если invalid
+    if (!$unsObj) $message = 'Некорректная ссылка';
+    // если valid
+    else {
+        $message = "E-mail: $unsObj->email:";
+        // если есть tag
+        if ($unsObj->tag) {
+            $result = $mg->unsubscribeUser([
+                'address' => $unsObj->email,
+                'tag' => $unsObj->tag
+            ]);
+            if ($result->http_response_code == 200) $message .= ' отписан от этой темы рассылок';
+            else {
+                $message = 'Что-то пошло не так, но мы уже знаем об этом и исправим - попробуйте позже';
+                $log->error("Can't unsubscribe user from tag: " . $unsObj->tag, ['METHOD' => __METHOD__]);
+            }
+        }
+        // если есть список рассылок
+        if ($unsObj->mailingList) {
+            $result = $mg->updateUserAtMailingList($unsObj->mailingList,$unsObj->email, ['subscribed' => 'no']);
+            if ($result->http_response_code == 200) $message .= ' отписан от этого списка рассылок';
+            else {
+                $message = 'Что-то пошло не так, но мы уже знаем об этом и исправим - попробуйте позже';
+                $log->error("Can't unsubscribe user from mailing list", ['METHOD' => __METHOD__]);
+            }
+        }
+        // если нет ни списка рассылок ни tag - блокируем адрес для рассылок в домене
+        if (!$unsObj->tag && !$unsObj->mailingList) {
+            $result = $mg->unsubscribeUser(['address' => $unsObj->email]);
+            if ($result->http_response_code == 200) $message .= ' отписан от рассылок';
+            else {
+                $message = 'Что-то пошло не так, но мы уже знаем об этом и исправим - попробуйте позже';
+                $log->error("Can't unsubscribe user from domain", ['METHOD' => __METHOD__]);
+            }
+        }
+    }
+?>
+
+<!-- блок отписки от рассылок -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h5><?=$message?></h5>
+        </div>
+    </div>
+</div>

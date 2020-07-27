@@ -1,0 +1,147 @@
+<!--Секция Фотографии-->
+<div class="container my-2 border">
+    <h5 class="my-2">Загрузите Ваши фотографии</h5>
+    <div class="d-flex flex-column align-items-center bg-light px-0 px-sm-3 py-3 mb-3">
+        <div class="d-flex flex-wrap justify-content-around w-100 mb-2" id="chop-photo-collection" data-count="0">
+            <div class="d-none" name="chop-photo-element">
+                <div class="d-flex flex-column border rounded p-1 m-1">
+                    <div class="d-flex flex-nowrap">
+                        <img class="img-thumbnail chop_photo" name="chop-photo-img">
+                        <button type="button" class="close align-self-start ml-1" aria-label="Close" name="delete-img">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <input type="text" name="chop_photo_file_name[]" form="chop_form" hidden>
+                    <input type="text" class="form-control form-control-sm chop_photo_name mt-1" maxlength="30"
+                        name="chop_photo_name[]" form="chop_form" placeholder="Подпись к фотографии">
+                </div>
+            </div>
+        </div>
+        <label class="badge badge-secondary text-center pl-3 mb-1 chop_photo_label">
+            Добавьте фотографию<input type="file" class="chop_photo_input m-0 p-0" id="add_chop_photo" accept="image/*">
+            <span class="spinner-border spinner-border-sm text-info d-none" id="photo_spinner" role="status"
+                aria-hidden="true"></span>
+        </label>
+        <span class="badge" id="photo_ok"></span>
+        <small class="form-text text-muted mx-1">
+            Не более 3 фотографий в формате JPG/JPEG.
+        </small>
+    </div>
+</div>
+
+<!--Секция Почему Вы-->
+<div class="container my-2 border">
+    <h5 class="my-2">Несколько тезисов на тему "Почему выбирают Вас"</h5>
+    <div class="bg-light p-3 mb-3">
+        <ol id="why_list" data-count="0">
+            <li class="d-none" name="why-you-element">
+                <div class="form-inline">
+                    <input type="text" class="form-control-plaintext text-left w-75 pt-0" name="why_you_item[]"
+                        form="chop_form" readonly>
+                    <button type="button" class="close ml-3 mb-1" aria-label="Close" name="why-you-delete">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </li>
+        </ol>
+        <div class="form-inline">
+            <input type="text" class="form-control w-75 mr-3 my-1 my-sm-0" maxlength="100" id="why_you_input"
+                placeholder="Мы 20 лет на рынке...">
+            <button type="button" class="btn btn-secondary" id="add_why_you">Добавить</button>
+        </div>
+        <small class="d-block text-muted text-center mt-1">Добавьте до 5 тезисов</small>
+    </div>
+</div>
+
+<!--Секция Лицензии-->
+<div class="container my-2 border">
+    <h5 class="my-2">Загрузите Ваши лицензии</h5>
+    <div class="d-flex flex-column align-items-center bg-light px-0 px-sm-3 py-3 mb-3">
+        <div class="d-flex flex-wrap justify-content-around w-100 mb-2" id="chop_licence_collection" data-count="0">
+            <div class="d-none" name="chop-licence-element">
+                <div class="d-flex flex-column border rounded p-1 m-1">
+                    <div class="d-flex flex-nowrap" name="chop-licence">
+                        <img class="img-thumbnail chop_photo" name="chop-licence-img">
+                        <button type="button" class="close align-self-start ml-1" aria-label="Close"
+                            name="delete-licence">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <input type="text" name="chop_licence_file_name[]" form="chop_form" hidden>
+                    <input type="text" class="form-control form-control-sm chop_photo_name mt-1" maxlength="30"
+                        name="chop_licence_name[]" form="chop_form" placeholder="Подпись к лицензии">
+                </div>
+            </div>
+        </div>
+        <label class="badge badge-secondary text-center pl-3 mb-1 chop_photo_label ">
+            Добавьте документ<input type="file" class="chop_photo_input m-0 p-0" id="add_chop_licence" accept="image/*">
+            <span class="spinner-border spinner-border-sm text-info d-none" id="licence_spinner" role="status"
+                aria-hidden="true"></span>
+        </label>
+        <span class="badge" id="licence_ok"></span>
+        <small class="form-text text-muted mx-1">
+            Не более 3 документов и/или изображений в формате JPG/JPEG.
+        </small>
+    </div>
+</div>
+
+<!--Секция Отзывы-->
+<!--
+<div class="container my-2 border">
+    <h5 class="my-2">Добавьте отзывы Ваших клиентов</h5>
+    <div class="d-flex flex-column align-items-center bg-light px-0 px-sm-3 py-3 mb-3">
+        <div class="d-flex flex-wrap mb-2 justify-content-around w-100" id="chop_feedback_collection" data-count="0">
+            <div class="chop_feedback d-none" name="chop-feedback-element">
+                <div class="d-flex flex-column border rounded p-1 m-1">
+                    <div class="d-flex flex-nowrap">
+                        <input type="text" class="form-control form-control-sm my-1" maxlength="35"
+                            name="feedback_client_name[]" form="chop_form" placeholder="От кого">
+                        <button type="button" class="close align-self-start ml-1" aria-label="Close"
+                            name="delete-feedback">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <textarea class="form-control chop_feedback_input" placeholder="Пара предложений из отзыва" rows="8"
+                        maxlength="150" name="feedback_content[]" form="chop_form"></textarea>
+                    <input class="form-control form-control-plaintext chop_feedback_input mt-1" name="feedback_name[]"
+                        form="chop_form" readonly>
+                    <input class="form-control form-control-plaintext chop_feedback_input mt-1"
+                        name="feedback_file_name[]" form="chop_form" hidden>
+                </div>
+            </div>
+        </div>
+        <label class="badge badge-secondary text-center pl-3 mb-1 chop_photo_label ">
+            Добавьте документ<input type="file" class="chop_photo_input m-0 p-0" id="add_chop_feedback" accept=".pdf">
+            <span class="spinner-border spinner-border-sm text-info d-none" id="feedback_spinner" role="status"
+                aria-hidden="true"></span>
+        </label>
+        <span class="badge" id="feedback_ok"></span>
+        <small class="form-text text-muted mx-1">
+            Не более 3 документов объемом до 350 Кб каждый в формате PDF с распознанным текстом.
+        </small>
+    </div>
+</div>
+-->
+
+<!--Секция "С нами работают"-->
+<div class="container my-2 border">
+    <h5 class="my-2">Добавьте звучных имен среди Ваших клиентов</h5>
+    <div class="bg-light p-3 mb-3">
+        <div class="d-flex flex-wrap" id="chop_clients_collection" data-count="0">
+            <div class="d-none" name="chop_client_element">
+                <div class="d-flex border rounded p-1 mr-2 mb-2">
+                    <input type="text" class="form-control-plaintext who_client_element" name="client_item[]"
+                        form="chop_form" readonly>
+                    <button type="button" class="close ml-3 mb-1" aria-label="Close" name="client-item-delete">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-inline mt-2">
+            <input type="text" class="form-control w-75 mr-3 my-1 my-sm-0" maxlength="39" id="client_text_input"
+                placeholder="Детский мир...">
+            <button type="button" class="btn btn-secondary" id="add_client_item">Добавить</button>
+        </div>
+    </div>
+</div>

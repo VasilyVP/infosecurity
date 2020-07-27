@@ -1,0 +1,225 @@
+<!-- секция поиска -->
+<?php // активируем компонент определения города и страны
+$location = new \components\LocationByIPComponent();
+?>
+<div class="container nav-container">
+    <form id="search_form" action="/search">
+        <div class="row mb-4 d-md-none">
+            <div class="col-11 pr-4 sx-color h5">
+                Укажите критерии поиска и мы подберем для Вас лучшие варианты
+            </div>
+        </div>
+        <div class="row mt-lg-5">
+            <div class="col-lg-5 col">
+                <nav class="nav nav-tabs btn-group btn-group-sm d-flex" role="tablist">
+                    <button type="button" class="btn flex-fill sx-btn-on active" data-toggle="tab" href="#nav-phys"
+                        role="tab" aria-controls="nav-phys" aria-selected="true">Физическим лицам</button>
+                    <button type="button" class="btn flex-fill sx-btn-off" data-toggle="tab" href="#nav-org" role="tab"
+                        aria-controls="nav-org" aria-selected="false">Организациям</button>
+                </nav>
+            </div>
+            <div class="col-4 d-none d-md-block offset-2">
+                <h5>Место поиска</h5>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-5">
+                <div class="tab-content" id="nav-tabContent">
+                    <!--Физики-->
+                    <div class="tab-pane fade show active" id="nav-phys" role="tabpanel" aria-labelledby="nav-phys"
+                        data-function="params">
+                        <div class="row mt-4 mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="signaling_flat" id="signaling_flat">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="signaling_flat">Сигнализация в квартиру</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="signaling_house" id="signaling_house">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="signaling_house">Сигнализация в дом на дачу или коттедж</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="signaling_garage" id="signaling_garage">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="signaling_garage">Сигнализация в гараж</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="CCTV" id="video">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="video">Видеонаблюдение</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="guard" id="phys_sec">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="phys_sec">Личная охрана, телохранитель</label>
+                            </div>
+                        </div>
+                        <div id="phys-options" class="d-none">
+                            <div class="row mb-2">
+                                <div class="col-1 pt-2">
+                                    <input class="m_switch_check" type="checkbox" name="GPS" id="gps_ph">
+                                </div>
+                                <div class="col ml-2 pt-1">
+                                    <label for="gps_ph">GPS мониторинг автотранспорта</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a class="sx-link" href="#" id="show-phys-opt">Показать все</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Юрики-->
+                    <div class="tab-pane fade" id="nav-org" role="tabpanel" aria-labelledby="nav-org" data-function="params">
+                        <div class="row mt-4 mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="alarm_button" id="alarm_button">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="alarm_button">Тревожная кнопка</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="sec_signaling" id="sec_signaling">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="sec_signaling">Охранная сигнализация</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="fire_signaling" id="fire_signaling">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="fire_signaling">Пожарная сигнализация</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="CCTV" id="video_y">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="video_y">Видеонаблюдение</label>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-2">
+                                <input class="m_switch_check" type="checkbox" name="guard" id="phys_sec_y">
+                            </div>
+                            <div class="col ml-2 pt-1">
+                                <label for="phys_sec_y">Физическая охрана/сопровождение</label>
+                            </div>
+                        </div>
+
+                        <div id="org-options" class="d-none">
+                            <div class="row mb-2">
+                                <div class="col-1 pt-2">
+                                    <input class="m_switch_check" type="checkbox" name="GPS" id="gps_y">
+                                </div>
+                                <div class="col ml-2 pt-1">
+                                    <label for="gps_y">Мониторинг автотранспорта</label>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-2">
+                                    <input class="m_switch_check" type="checkbox" name="cargo_escort" id="cargo_sec">
+                                </div>
+                                <div class="col ml-2 pt-1">
+                                    <label for="cargo_sec">Сопровождение грузов</label>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-2">
+                                    <input class="m_switch_check" type="checkbox" name="collection" id="inkass">
+                                </div>
+                                <div class="col ml-2 pt-1">
+                                    <label for="inkass">Инкассация</label>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-2">
+                                    <input class="m_switch_check" type="checkbox" name="design_installation" id="design_installation">
+                                </div>
+                                <div class="col ml-2 pt-1">
+                                    <label for="design_installation">Проектирование и монтаж ОПС</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a class="sx-link" href="#" id="show-org-opt">Показать все</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 offset-md-2">
+                <div class="row mt-5 d-md-none">
+                    <div class="col h5">
+                        Место поиска
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="country" class="sx-color">Страна</label>
+                        <select id="country" name="country" class="form-control" data-country="<?=$location->getCountry();?>">
+                            <option value="Россия">Россия</option>
+                            <option value="Украина">Крым</option>
+                            <option value="Украина">Украина</option>
+                            <option value="Беларусь">Беларусь</option>
+                            <option value="Казахстан">Казахстан</option>
+                            <option value="Эстония">Эстония</option>
+                            <option value="Латвия">Латвия</option>
+                            <option value="Литва">Литва</option>
+                            <option value="Азербайджан">Азербайджан</option>
+                            <option value="Армения">Армения</option>
+                            <option value="Грузия">Грузия</option>
+                            <option value="Грузия">Абхазия</option>
+                            <option value="Грузия">Южная Осетия</option>
+                            <option value="Киргизия">Кыргызстан</option>
+                            <option value="Молдова">Молдова</option>
+                            <option value="Таджикистан">Таджикистан</option>
+                            <option value="Туркменистан">Туркменистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <label for="city" class="sx-color">Населенный пункт</label>
+                        <input id="city" class="form-control typeahead mb-3 mb-md-1" type="search" size="40" name="where" data-locality="<?=$location->getLocality();?>"
+                            data-city="<?=$location->getCity();?>" data-area="<?=$location->getArea();?>" data-region="<?=$location->getRegion();?>"
+                            required>
+                        <a href="#" id="locate">
+                            <img src="/imgs/icons/геометка.png" alt="Specify location">
+                            <small class="sx-link">Уточнить местоположение</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block" style="background-color: #cd2e2f; border-color: #cd2e2f">Поиск предложений</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

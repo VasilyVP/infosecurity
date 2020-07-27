@@ -1,0 +1,9 @@
+logs/
+temp/php_sess/*
+temp/ssr_cache/*
+temp/data/*
+domain_confirmations/*
+node_modules/
+public_html/vendor/
+public_html/imgs/
+public_html/robots_info/*

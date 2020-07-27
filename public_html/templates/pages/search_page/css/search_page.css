@@ -1,0 +1,43 @@
+
+.nav-common {
+    font-size: 0.9rem;
+}
+
+.text-smaller {
+    font-size: 0.9rem;
+}
+
+.page-link {
+    color: #464646;
+    cursor: pointer;
+}
+li.active>a {
+    background-color: #14d2c7 !important; /* #ebebeb */
+    border-color: #14d2c7 !important;
+    color:#464646 !important;
+}
+
+.chop-logo {
+    max-width: 5.5rem;
+    max-height: 7rem;
+    /*height: 100%;*/
+}
+
+select[data-parameter] {
+    width: 12rem;
+}
+
+/*table {
+    font-size: 0.9rem;
+}*/
+
+@media(min-width: 992px) {
+/*  .nav-common {
+        height: 2.8rem;
+    }
+*/
+
+    .resp-chop {
+        width: 75%;
+    }
+}

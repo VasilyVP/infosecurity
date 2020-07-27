@@ -1,0 +1,86 @@
+#black_nav {
+    min-height: 2.5rem;
+}
+
+.p-about {
+    text-indent: 3rem;
+}
+
+.img-about {
+    width: 5rem;
+}
+
+.img-icon {
+    height: 4.5rem;
+}
+
+.img-photo-min {
+    width: 17rem;
+    height: auto;
+    cursor: pointer;
+}
+@media (min-width: 992px) {
+    .img-photo-min {
+        height: 9.5rem;
+        width: auto;
+    }
+
+    #why_we_div {
+        width: 60rem;
+    }
+
+    #logo {
+        max-width: 125px;
+        height: auto;
+    }
+}
+
+.img-max {
+    width: 100%;
+    height: auto;
+}
+
+/*Ширина подписи к картинке*/
+img + p {
+    max-width: 15rem;
+}
+
+/*Ширина отзыва*/
+p.feedback-style {
+    max-width: 100%;
+}
+@media (min-width: 992px) {
+    p.feedback-style {
+        max-width: 15rem;
+    }
+}
+
+/* колонки списка */
+@media (min-width: 992px) {
+    ul {
+        column-count: 3;    
+    }
+}
+
+/* Интервалы между значками */
+.spaced {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .spaced {
+        width: 45%;
+    }
+}
+@media (min-width: 768px) {
+    .spaced {
+        width: 30%;
+    }
+}
+
+#closeImage span {
+    font-size: 3rem;
+}
+
+.why_item_img {
+    width: 3rem;
+}

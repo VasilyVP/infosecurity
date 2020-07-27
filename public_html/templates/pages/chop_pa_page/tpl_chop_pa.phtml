@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем секцию <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <meta name="robots" content="noindex,nofollow">
+    <!-- page CSS -->
+    <link rel="stylesheet" href="/templates/pages/chop_pa_page/css/chop_pa_page.css">
+    <!-- libs JS -->
+    <script defer src="/js/library/jquery.maskedinput.min.js"></script>
+    <!-- Page JS -->
+    <!-- Секция меню со вкладками -->
+    <script defer {TYPE_MODULE} src="{JS_CHOP_PA_PAGE}"></script>
+</head>
+
+<body>
+    <?php
+        # секция Общая навигация страницы
+        require TPL_NAV_SECTION;
+
+        # секция стандартное верхнее меню на черной полоске
+        require TPL_CHOP_PA_BL_NAV_S;
+
+        # раздел "ЛК ЧОП"
+        // секция меню со вкладками
+        require TPL_CHOP_PA_TABS_S;
+
+        // секция шапка с общей информацией
+        require TPL_CHOP_PA_HEAD_S;
+        // секция Контакты
+        require TPL_CHOP_PA_CONTACTS_S;
+        // секция о Компании
+        require TPL_CHOP_PA_ABOUT_S;
+        // секция Услуги
+        require TPL_CHOP_PA_SERVICES_S;
+        // секция Фотографии, Почему мы, лицензии
+        require TPL_CHOP_PA_FOTO_LICENCE_S;
+        // секция Контакты
+        require TPL_CHOP_PA_SUBMIT_END_S;
+
+        # раздел прейскуранта/прайс
+        // секция прайс
+        require TPL_PRICE_S;
+
+        # раздел пользовательских данных
+        // секция Общих реквизитов пользователя
+        require TPL_USER_SECTION;
+
+        # раздел Обратная связь
+        // секция обратной связи
+        require TPL_CHOP_PA_SUPPORT_S;
+    ?>
+    <!--Последний div навигации id="nav-tabContent"-->
+    </div>
+</body>
+</html>

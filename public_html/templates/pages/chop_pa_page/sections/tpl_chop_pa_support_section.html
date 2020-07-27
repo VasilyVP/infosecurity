@@ -1,0 +1,40 @@
+<!-- Секция Обратная связь -->
+<div class="tab-pane fade" id="nav-support" role="tabpanel" aria-labelledby="nav-support-tab">
+    <div class="container">
+        <form id="support_form" method="POST" action="#">
+            <div class="form-group">
+                <input type="text" class="form-control" id="support_subject" name="support_subject" maxlength="50"
+                    required placeholder="Тема">
+            </div>
+            <div class="form-group">
+                <textarea type="text" class="form-control" id="support_message" name="support_message" rows="10"
+                    maxlength="500" required placeholder="Сообщение"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="support_files" name="support_files" 
+                        accept="image/*, .pdf, .xls, .xlsx, .csv, .txt" multiple>
+                    <label class="custom-file-label" for="support_files" id="files_label">Приложить документы</label>
+                    <small class="form-text text-muted">
+                        не более 5 документов общим объемом до 8 Мб
+                    </small>
+                </div>
+            </div>
+            <input type="hidden" id="captcha_support_token" name="captcha_support_token">
+            <div class="form-row mb-2">
+                <div class="col-md-2">
+                    <button id="support_submit_button" class="btn sx-btn-on" type="submit">Отправить 
+                        <span id="spiner" class="spinner-border spinner-border-sm text-light d-none" role="status"
+                        aria-hidden="true"></span>
+                    </button>
+                    <button id="support_reset_button" class="btn btn-secondary d-none" type="reset">Очистить</button>
+                </div>
+                <div class="col-md-3">
+                    <h5>
+                        <span class="ml-0 mt-2 badge" id="send_ok"></span>
+                    </h5>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- Страница сервисных разделов -->
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <meta name="robots" content="none">
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        
+        # секция подменю Серая полоса
+        require GREY_BAR_SERVICES_S;
+        # секция контента страницы
+        require TPL_SERVICES_SECTION;
+
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+</html>

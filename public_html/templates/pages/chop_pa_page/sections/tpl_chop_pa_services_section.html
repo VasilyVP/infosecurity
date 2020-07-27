@@ -1,0 +1,79 @@
+<!-- Секция: Услуги ЧОП-->
+<div class="container my-2 border" id="services_section">
+    <h5 class="my-2">Ваши услуги</h5>
+    <div class="bg-light p-3 mb-3">
+        <p class="form-text text-muted">Пара строк о ваших услугах:</p>
+        <textarea class="form-control mb-1" maxlength="1000" rows="3" id="service_about" name="service_about"
+            form="chop_form"></textarea> <!--wrap-->
+        <small class="d-block text-center text-muted">Описание до 1000 символов</small>
+    </div>
+    <div class="bg-light p-3 mb-3">
+        <p class="form-text text-muted m-0">Укажите, какие услуги вы оказываете:</p>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="design_installation_check"
+                name="design_installation_check" form="chop_form">
+            <label class="custom-control-label" for="design_installation_check">Проектирование и монтаж</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="pult_security_check" name="pult_security_check"
+                form="chop_form">
+            <label class="custom-control-label" for="pult_security_check">Пультовая охрана</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="physic_security_check" name="physic_security_check"
+                form="chop_form">
+            <label class="custom-control-label" for="physic_security_check">Физическая охрана</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="cctv_check" name="cctv_check" form="chop_form">
+            <label class="custom-control-label" for="cctv_check">Видеонаблюдение</label>
+        </div>
+
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="gps_check" name="gps_check" form="chop_form">
+            <label class="custom-control-label" for="gps_check">GPS мониторинг автотранспорта</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="collection_check" name="collection_check"
+                form="chop_form">
+            <label class="custom-control-label" for="collection_check">Инкассация</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="cargo_escort_check" name="cargo_escort_check"
+                form="chop_form">
+            <label class="custom-control-label" for="cargo_escort_check">Сопровождение грузов</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="access_control_check" name="access_control_check"
+                form="chop_form">
+            <label class="custom-control-label" for="access_control_check">Контроль доступа</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="service_check" name="service_check"
+                form="chop_form">
+            <label class="custom-control-label" for="service_check">Техобслуживание сигнализации</label>
+        </div>
+    </div>
+    <div class="bg-light p-3 mb-3 d-none" id="signaling_type_s">
+        <p class="form-text text-muted m-0">Укажите, какое оборудование вы устанавливаете клиентам:</p>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="wired_check" name="wired_check" form="chop_form">
+            <label class="custom-control-label" for="wired_check">Проводное оборудование</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="wireless_check" name="wireless_check" form="chop_form">
+            <label class="custom-control-label" for="wireless_check">Беспроводное оборудование</label>
+        </div>
+    </div>
+    <div class="bg-light p-3 mb-3 d-none" id="signaling_options_s">
+        <p class="form-text text-muted m-0">Отметьте дополнительные извещатели, которые вы можете установить по желанию заказчика:</p>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="gas_check" name="gas_check" form="chop_form">
+            <label class="custom-control-label" for="gas_check">Датчик газа</label>
+        </div>
+        <div class="custom-control custom-checkbox my-1">
+            <input class="custom-control-input" type="checkbox" id="water_check" name="water_check" form="chop_form">
+            <label class="custom-control-label" for="water_check">Датчик протечки воды</label>
+        </div>
+    </div>
+</div>

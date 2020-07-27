@@ -1,0 +1,41 @@
+<?php # страница активации экаунта(логина)
+    $aua = new components\ActivateUserAccount();
+?>
+<div class="container" data-result="<?=$aua->getStatus()?>" id="container">
+    <div class="mt-5 d-none" id="activated">
+        <h4 class="text-center">Ваш экаунт <b><?=$aua->getLogin()?></b> активирован.</h4>
+        <p class="mt-4 text-center">Теперь вы можете управлять данными вашей организации.</p>
+    </div>
+    <div class="mt-5 d-none" id="no_email">
+        <h4 class="text-center">Логин <b><?=$aua->getLogin()?></b> не обнаружен</h4>
+        <h4 class="text-center">или уже активирован.</h4>
+    </div>
+    <div class="mt-5 d-none" id="error">
+        <h4 class="text-center">Что-то пошло не так, попробуйте пожалуйста позже</h4>
+    </div>
+    <div class="row justify-content-center d-none" id="login_btn_div">
+        <div class="col-9 col-md-3 text-center">
+            <button class="btn btn-block sx-btn-outline my-4" style="color: black" id="to_login_btn">
+                Войти в личный кабинет
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    document.title = 'Активация пользовательского экаунта';
+    const result = document.getElementById('container').dataset.result;
+
+    if (result == 'activated') {
+        document.getElementById('activated').classList.remove('d-none');
+        document.getElementById('login_btn_div').classList.remove('d-none');
+        document.getElementById('login_email').value = '<?=$aua->getLogin()?>';
+    } else if (result == 'error') {
+        document.getElementById('error').classList.remove('d-none');
+    } else {
+        document.getElementById('no_email').classList.remove('d-none');
+    }
+    
+    document.getElementById('to_login_btn').addEventListener('click', function (e) {
+        document.getElementById('login_link').click();
+    });
+</script>

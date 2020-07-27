@@ -1,0 +1,103 @@
+<div class="tab-pane fade" id="nav-mailing" role="tabpanel" aria-labelledby="nav-mailing-tab">
+    <div class="container">
+
+        <form id="load_template_form">
+            <div class="row bg-light mt-4 pb-3">
+                <!--Загрузка нового шаблона-->
+                <div class="col-md-5">
+                    <label>Добавить новый шаблон:</label>
+                    <div class="custom-file d-flex align-items-end">
+                        <label for="new_template" class="custom-file-label" id="file_label">html</label>
+                        <input type="file" id="new_template" name="new_template" class="custom-file-input" accept=".html">
+                    </div>
+                </div>
+                <!--Загрузка картинок для шаблонов-->
+                <div class="col-md-5">
+                    <label>Добавить картинки для рассылок:</label>
+                    <div class="custom-file d-flex align-items-end">
+                        <label for="new_imgs" class="custom-file-label" id="imgs_label">Картинки</label>
+                        <input type="file" id="new_imgs" name="new_imgs[]" class="custom-file-input" accept="image/*"
+                            multiple>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-outline-primary" id="load_template">Загрузить
+                        <i id="load_spiner" class="fas fa-spinner fa-spin d-none" style="font-size: 1.2rem"></i>
+                    </button>
+                    <i id="load_ok" class="ml-2 fas fa-check d-none" style="font-size: 2rem; color: green"></i>
+                    <i id="load_err" class="ml-2 fas fa-times d-none" style="font-size: 2rem; color: red"></i>
+                </div>
+            </div>
+        </form>
+
+        <form id="send_mailing_form">
+            <div class="row bg-light mt-2 pb-3">
+                <div class="col-md-4">
+                    <label for="mailing_template">Выбрать шаблон:</label>
+                    <select id="mailing_template" name="mailing_template" class="form-control"></select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="mailing_list">Выбрать список рассылки:</label>
+                    <select id="mailing_list" name="mailing_list" class="form-control"></select>
+                </div>
+                <div class="col-md-2">
+                    <label for="mailing_tag">Метка рассылки(tag):</label>
+                    <input type="text" list="tags" id="mailing_tag" name="mailing_tag" class="form-control" required>
+                    <datalist id="tags"></datalist>
+                </div>
+            </div>
+            <div class="row pb-3 mt-2 bg-light">
+                <div class="col-md-2">
+                    <label for="mailing_from">Отправитель:</label>
+                    <select id="mailing_from" name="mailing_from" class="form-control">
+                        <option value="info">info</option>
+                        <option value="invite">invite</option>
+                        <option value="robot">robot</option>
+                        <option value="news">news</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="from_name">Имя отправителя:</label>
+                    <select id="from_name" name="from_name" class="form-control">
+                        <option value="Scanox">Scanox</option>
+                        <option value="Scanox Безопасность">Scanox Безопасность</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label for="mailing_description">Описание:</label>
+                    <input type="text" id="mailing_description" name="mailing_description" class="form-control"
+                        required>
+                </div> 
+            </div>
+            <div class="row mb-5 pb-3 bg-light">
+                <div class="col-md-10">
+                    <label for="mailing_subject">Тема письма:</label>
+                    <input type="text" id="mailing_subject" name="mailing_subject" class="form-control" required>
+                </div>
+                <div class="col-md-2 offset-0 d-flex align-items-end">
+                    <button id="send_mailing" type="submit" class="btn btn-primary">Отправить
+                        <i id="send_spiner" class="fas fa-spinner fa-spin d-none" style="font-size: 1.2rem"></i>
+                    </button>
+                    <i id="send_ok" class="ml-2 fas fa-check d-none" style="font-size: 2rem; color: green"></i>
+                    <i id="send_err" class="ml-2 fas fa-times d-none" style="font-size: 2rem; color: red"></i>
+                </div>
+            </div>
+        </form>
+
+        <div class="row p-1 m-1 border-bottom">
+            <div class="col-md-2">Дата:</div>
+            <div class="col-md-2">Группа рассылки:</div>
+            <div class="col-md-2">Шаблон:</div>
+            <div class="col-md-2">Метка(tag):</div>
+            <div class="col-md-4">Описание:</div>
+        </div>
+        <div class="row p-1 m-1" data-function="mailings-history">
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>

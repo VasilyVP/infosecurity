@@ -1,0 +1,18 @@
+<?php # Секция навигации: С функцией логина и регистрации
+
+    # в зависимости от статуса аутентификации
+    $auth = \engines\AuthenticationEngine::create();
+    # соответствующая секция Навигации
+    if ($auth->isAuthenticated()) {
+        $rout = \engines\RoutingEngine::create();
+        // секция меню аутентифицированного пользователя
+        require TPL_NAV_A_SECTION;
+    }
+    else {
+        // секция меню
+        require TPL_NAV_S;
+        // секция окна регистрации
+        require TPL_REG_S;
+        // секция окна Логин
+        require TPL_LOG_S;
+    }

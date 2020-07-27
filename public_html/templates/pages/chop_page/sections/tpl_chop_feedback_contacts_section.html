@@ -1,0 +1,65 @@
+<!--Секция Отзывы-->
+<div class="jumbotron bg-light mt-5 py-3 d-none" id="feedback_container">
+    <div class="container mt-4">
+        <p class="h4 font-weight-bold text-center my-5">Отзывы наших клиентов</p>
+        <div class="d-flex flex-column flex-md-row flex-wrap justify-content-around mx-auto my-5 py-2"
+            id="feedback_section">
+            <div class="d-none bg-white p-3 mb-3 mb-lg-0" name="feedback_div">
+                <p><u name="client_name"></u></p>
+                <p class="feedback-style" name="feedback_short"></p>
+                <img src="/imgs/icons/pdf.png">
+                <small><a target="_blank">Посмотреть оригинал</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+<!--С нами работают-->
+<div class="container mt-5 d-none" id="clients_container">
+    <p class="h4 font-weight-bold text-center mb-5">С нами работают</p>
+    <ul class="text-md-left" id="clients_section">
+        <li class="d-none" name="client_item"></li>
+    </ul>
+</div>
+<!--Контакты-->
+<div class="jumbotron bg-light mt-5 py-3">
+    <div class="container mt-4">
+        <p class="h4 font-weight-bold text-center my-5">Контакты</p>
+        <div class="row">
+            <div class="col-md">
+                <p class="h5 mb-2">Телефон:</p>
+                <p class="h5 mb-4" name="phone">
+                    +X (XXX) XXX-XX-XX<a class="sx-link ml-3" href="#" name="show_phone"><small>Показать</small></a>
+                </p>
+                <p class="h5 mb-3">Адрес:</p>
+                <p class="mb-2" id="country"></p>
+                <div class="mb-5" id="addresses_div">
+                    <p class="mb-2 d-none" name="address_item">
+                        <span name="addr_type"></span>
+                        <span name="city"></span>
+                        <span name="address"></span>
+                    </p>
+                </div>
+                <p>
+                    <a href="#" id="email_a" rel="nofollow">Email: <span id="email_t"></span></a>
+                </p>
+                <p>
+                    <a href="#" target="_blank" id="site_a" rel="noopener nofollow">Сайт компании: <span id="site_t"></span></a>
+                </p>
+            </div>
+            <div class="col-md text-center mt-5 mt-md-0">
+                <img class="img-fluid maximized" src="" id="map" alt="address map">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Просмотр картинок-->
+<div class="modal fade" id="showPicture" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog d-flex flex-column" role="document">
+        <button id="closeImage" type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <img class="img-max" id="bigImage">
+    </div>
+</div>

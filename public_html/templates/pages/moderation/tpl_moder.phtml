@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+# подключаем секцию <HEAD>
+require COMMON_HEAD_S;
+?>
+    <!-- page CSS -->
+    <link rel="stylesheet" href="/templates/pages/moderation/css/moderation.css">
+    <!-- check from font-awesome-->
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+    <!-- Page JS -->
+    <script defer src="/templates/pages/moderation/js/main.js" type="module"></script>
+</head>
+
+<body>
+    <?php
+# секция Общая навигация страницы
+require TPL_NAV_SECTION;
+
+# секция Навигация с черной полоской
+require TPL_MODER_BL_NAV_S;
+
+# раздел "меню вкладок"
+// секция меню со вкладками
+require TPL_MODER_TABS_S;
+
+# раздел модерации новых сайтов
+// секция модерации
+require TPL_MODER_SECTION;
+
+# раздел управления страницами ЧОП
+// секция страниц ЧОП
+require TPL_MODER_PAGES_S;
+
+# раздел пользовательских данных
+// секция реквизитов пользователя
+require TPL_USER_SECTION;
+
+?>
+    <!--Последний div навигации id="nav-tabContent"-->
+    </div>
+</body>
+
+</html>

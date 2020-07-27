@@ -1,0 +1,18 @@
+<!-- Страница подтверждения email при регистрации -->
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # секция ввода нового пароля
+        require TPL_EMAIL_CONFIRM_SECTION;        
+    ?>
+</body>
+</html>

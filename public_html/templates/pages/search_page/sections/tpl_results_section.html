@@ -1,0 +1,99 @@
+<div class="container" name="container">
+    <h1 class="my-3 h5" id="caption"></h1>
+    <div class="row mt-5 d-none" id="find_nothing">
+        <div class="col h6 text-center">
+            <p>К сожалению, по Вашему запросу мы ничего не нашли :(</p>
+            <p>Попробуйте изменить условия поиска</p>
+        </div>
+    </div>
+    <div id="search-results">
+        <div name="chop-template" class="border rounded p-3 resp-chop mb-4 d-none">
+            <div class="row">
+                <div class="col-4 col-md-2 text-center">
+                    <img class="img-fluid chop-logo" src="/imgs/icons/logo_chop.png" alt="logo" name="logo">
+                </div>
+                <div class="col-8 col-md-7">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="h5" name="name"></h2><!--<span class="h5" name="name"></span>-->
+                            <address class="small mt-3 mb-2" name="city"></address>
+                            <address class="small" name="address"></address>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <a class="btn btn-outline-dark btn-sm btn-block mt-md-4 mx-auto" name="gotopage" href="#"
+                        target="blank">О компании</a>
+                    <button class="btn btn-block btn-sm sx-btn-on mx-auto" name="show_phone">Показать телефон</button>
+                </div>
+                <hr class="w-100 mx-3">
+            </div>
+
+            <div class="row mb-2 px-2">
+                <div class="col-md-4"><h3 class="h6" name="cardCaption"></h3></div>
+                <div class="col-md-4 text-md-center" name="price-section">
+                    <div class="row">
+                        <div class="col-6"><!--px-md-0-->
+                            <small class="text-muted" name="offer-price-title"></small>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span class="font-weight-bold" name="offer-price"></span>
+                            <span class="font-weight-bold" name="offer-price-currency"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-right" name="maintenance-section">
+                    <div class="row">
+                        <div class="col-7">
+                            <small class="text-muted" name="offer-maintenance-title"></small>
+                        </div>
+                        <div class="col-5 text-right">
+                            <span class="font-weight-bold" name="offer-maintenance"></span>
+                            <span class="font-weight-bold" name="offer-maintenance-currency"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div name="spec" class="d-none">
+                <div class="row px-2">
+                    <div class="col-12" name="section">
+                        <p class="sx-link mb-2">Состав услуги</p>
+                        <table class="table table-sm small">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Наименование</th>
+                                    <th class="text-center" scope="col">Подключение</th>
+                                    <th class="text-center" scope="col">Абонентская плата</th>
+                                </tr>
+                            </thead>
+                            <tbody name="specification">
+                                <tr class='d-none' name="spec-string">
+                                    <td name="spec-title"></td>
+                                    <td class="text-center" name="spec-price"></td>
+                                    <td class="text-center" name="spec-maint"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-2 d-none" name="show-spec-section">
+                <div class="col mb-3">
+                    <a class="sx-link small" href="#" name="show-spec">Показать состав услуги</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Секция постраничной навигации-->
+    <nav class="mt-5 d-none" id="page-nav" aria-label="Page navigation">
+        <ul class="pagination pagination-sm" id="pages-group">
+            <li class="page-item d-none" name="page-btn-template"><a class="page-link" rel="nofollow"></a></li>
+            <!--active-->
+            <li class="page-item" id="page-back"><a class="page-link" rel="nofollow">Назад</a></li>
+            <!--disabled-->
+            <li class="page-item" id="page-forward"><a class="page-link" rel="nofollow">Вперед</a></li>
+        </ul>
+    </nav>
+</div>

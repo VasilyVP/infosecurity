@@ -1,0 +1,486 @@
+<!--секция Прейскурант-->
+<div class="tab-pane fade" id="nav-price" role="tabpanel" aria-labelledby="nav-price-tab">
+    <form id="price_form" method="POST" action="#">
+        <div class="container mb-3">
+            <p>Выберите на вкладке "Организация" Ваши виды услуг.<br>Укажите здесь их минимальную стоимость (цена от) и
+                абонентскую плату в месяц для Пультовой охраны, Физической охраны, Видеонаблюдения и GPS-мониторинга.</p>
+            <div class="d-none" id="price_currency_section">
+                <div class="form-group form-inline d-flex justify-content-end">
+                    <label>Валюта:</label>
+                    <select class="form-control ml-2" name="price_currency">
+                        <option value="рубль">рубль</option>
+                        <option value="гривна">гривна</option>
+                        <option value="евро">евро</option>
+                        <option value="доллар">доллар</option>
+                        <option value="тенге">тенге</option>
+                        <option value="манат">манат</option>
+                        <option value="драм">драм</option>
+                        <option value="лари">лари</option>
+                        <option value="сом">сом</option>
+                        <option value="лей">лей</option>
+                        <option value="сомони">сомони</option>
+                        <option value="сум">сум</option>
+                    </select>
+                </div>
+            </div>
+            <!--спецификация оборудование ОПС-->
+            <div class="w-100">
+                <!--Сигнализация-->
+                <p class="text-muted" id="price_legend">
+                    Пустое поле означает - цена не указана.
+                    Если цена 0 (например абонентская плата), то укажите в поле "0".<br>
+                    Цена не влияет на показ объявления, но нереалистичные цены либо их отсутствие выглядят не привлекательно.</p>
+                <table class="table table-sm table-hover table-bordered border-bottom d-none" id="price_signal_tbl">
+                    <thead class="thead-dark">
+                        <tr class="text-center">
+                            <th rowspan="2">Сигнализация</th>
+                            <th colspan="2" type="wired">Проводной комплект</th>
+                            <th colspan="2" type="wireless">Беспроводной комплект</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="font-weight-normal" type="wired">Подключение</th>
+                            <th class="font-weight-normal" type="wired">Абонентская плата</th>
+                            <th class="font-weight-normal" type="wireless">Подключение</th>
+                            <th class="font-weight-normal" type="wireless">Абонентская плата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-weight-bold bg-light" colspan="5">Сигнализация: Базовый комплект</td>
+                        </tr>
+                        <tr>
+                            <td class="w-50">Квартира</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_flat_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_flat_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_flat_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_flat_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Дом, коттедж, дача</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_house_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_house_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_house_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_house_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Гараж</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_garage_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_garage_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_garage_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_garage_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Охранная сигнализация для бизнеса</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_sec_business_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_sec_business_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_sec_business_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_sec_business_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Пожарная сигнализация для бизнеса</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_fire_business_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_fire_business_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_fire_business_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_fire_business_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Охранно-пожарная сигнализация для бизнеса</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_compl_business_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_compl_business_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_compl_business_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="signal_compl_business_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Тревожная кнопка для бизнеса</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_wireless_maintenance">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-weight-bold bg-light" colspan="5">Сигнализация: Дополнительные опции</td>
+                        </tr>
+                        <tr>
+                            <td>Датчик дыма</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="smoke_det_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="smoke_det_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="smoke_det_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="smoke_det_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr id="gas_detection_ops">
+                            <td>Датчик газа</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gas_det_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gas_det_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gas_det_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gas_det_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Датчик разбития стекла</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="glass_det_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="glass_det_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="glass_det_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="glass_det_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr id="water_detection_ops">
+                            <td>Датчик протечки воды</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="water_det_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="water_det_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="water_det_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="water_det_wireless_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Тревожная кнопка (+ к базовому комплекту)</td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_opt_wired_price">
+                            </td>
+                            <td class="py-0" type="wired">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_opt_wired_maintenance">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_opt_wireless_price">
+                            </td>
+                            <td class="py-0" type="wireless">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="alarm_btn_opt_wireless_maintenance">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Видеонаблюдение-->
+                <table class="table table-sm table-hover table-bordered border-bottom d-none" id="price_cctv_tbl">
+                    <thead class="thead-dark">
+                        <tr class="text-center">
+                            <th class="w-50">Видеонаблюдение: Базовый комплект</th>
+                            <th class="font-weight-normal">Подключение</th>
+                            <th class="font-weight-normal">Абонентская плата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>В квартиру</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_flat_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_flat_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>В коттедж</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_house_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_house_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>В подъезд</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_entrance_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_entrance_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>В офис</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_office_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_office_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>В магазин</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_shop_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_shop_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>На склад</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_stock_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_stock_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Автомойка</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_car_wash_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cctv_car_wash_maintenance">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--GPS мониторинг автотранспорта-->
+                <table class="table table-sm table-hover table-bordered border-bottom d-none" id="price_gps_tbl">
+                    <thead class="thead-dark">
+                        <tr class="text-center">
+                            <th class="w-50">GPS мониторинг автотранспорта</th>
+                            <th class="font-weight-normal">Подключение</th>
+                            <th class="font-weight-normal">Абонентская плата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Личный автотранспорт</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gps_private_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gps_private_maintenance">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Коммерческий автотранспорт</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gps_commercial_price">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="gps_commercial_maintenance">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Физическая охрана-->
+                <table class="table table-sm table-hover table-bordered border-bottom d-none" id="price_phys_sec_tbl">
+                    <thead class="thead-dark">
+                        <tr class="text-center">
+                            <th class="w-50">Физическая охрана</th>
+                            <th class="font-weight-normal">Охранник без оружия (за час)</th>
+                            <th class="font-weight-normal">Вооруженный охранник (за час)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Дневной режим</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_day_unarmed">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_day_armed">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ночной режим</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_night_unarmed">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_night_armed">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Круглосуточно</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_24_unarmed">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="guard_24_armed">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Сопровождение грузов</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cargo_escort_unarmed">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="cargo_escort_armed">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Личная охрана</td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="private_sec_unarmed">
+                            </td>
+                            <td class="py-0">
+                                <input type="text" class="form-control-plaintext" pattern="[0-9,]{0,8}" maxlength="8"
+                                    name="private_sec_armed">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-none" id="price_save_section">
+                <button class="btn sx-btn-on" type="submit" form="price_form" id="price_save_btn">Сохранить
+                    <span class="spinner-border spinner-border-sm text-light d-none" id="price_save_spinner" role="status"
+                        aria-hidden="true"></span>
+                </button>
+                <i class="fas fa-check ml-2 align-middle d-none" style="font-size: 2rem; color: green" id="priceUpdateStatusOk"></i>
+                <i class="fas fa-times ml-2 align-middle d-none" style="font-size: 2rem; color: red" id="priceUpdateStatusErr"></i>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,76 @@
+RewriteEngine On
+## с www на без www
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$
+#RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+## Redirect to HTTPS
+#RewriteCond %{HTTPS} =off
+#RewriteCond %{HTTP_HOST} (www)?(test|development)?(.)?scanox.pro
+#RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !index.php
+#RewriteRule .* /index.php [L]
+RewriteRule .* '' [L]
+
+<If "%{HTTP_HOST} == 'development.scanox.pro'">
+    AuthName "Protected area. Login require"
+    AuthType Basic
+    AuthUserFile /home/a/a98513i7/development.scanox.pro/.htpasswd
+    Require valid-user
+</If>
+<If "%{HTTP_HOST} == 'test.scanox.pro'">
+    AuthName "Protected area. Login require"
+    AuthType Basic
+    AuthUserFile /home/a/a98513i7/test.scanox.pro/.htpasswd
+    Require valid-user
+</If>
+
+## Запрет выдачи листинга пустого каталога
+Options -Indexes
+
+## Access rules section
+<Files *.*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+#Match
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files test.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files test2.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files *.js>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files *.css>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files favicon.ico>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<FilesMatch "\.(pdf|png|jpe?g|svg|gif)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+<Files *.php>
+    Order Allow,Deny
+    Allow from all
+</Files>

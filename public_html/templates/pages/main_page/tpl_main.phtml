@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <!--Page CSS-->
+    <link rel="stylesheet" href="/templates/pages/main_page/css/main_page.css">
+    <!--Переключатели-->
+    <link rel="stylesheet" href="/css/jquery.mswitch.css" type="text/css">
+    
+    <!-- подключаем библиотеку переключателей -->
+    <script defer src="/js/library/jquery.mswitch.js" type="text/javascript"></script>
+    <!-- подключаем динамику страницы -->
+    <script defer {TYPE_MODULE} src="{JS_MAIN_PAGE}"></script>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # подключаем секцию Заголовок
+        require TPL_HEADER_SECTION;
+        # секция Поиск ЧОП
+        require TPL_SEARCH_SECTION;
+        # секция Полезные советы
+        require TPL_USEFUL_TIPS;
+        # секция Поиск по Городам
+        require TPL_SEARCH_BY_CITY;
+        # секция footer
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+
+</html>

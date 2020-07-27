@@ -1,0 +1,88 @@
+<!--Секция подтверждения email-->
+<?php # активируем компонент проверки ссылки
+    $confirm = new \components\confirmEmailComponent();
+?>
+<!-- меню "Серая полоса" -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-common" id="black_nav">
+    <div class="container pl-2">
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item" id="go_page_nav_item">
+                <a class="nav-link py-0" href="/" title="Главная">На главную</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- блок подтверждения email -->
+<div class="container" id="container" data-status="<?=$confirm->getStatus()?>" data-email="<?=$confirm->getEmail()?>">
+    <div class="row mt-5 d-none" id="confirm_email">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h5 class="mb-4">E-mail подтвержден</h5>
+            <p>Поздравляем, Вы сделали первый шаг навстречу новым клиентам со Scanox!</p>
+            <p>Теперь вы можете войти в личный кабинет, сформировать страницу и прейскурант стоимости услуг вашей компании</p>
+        </div>
+    </div>
+    <div class="row mt-5 d-none" id="not_found">
+        <div class="col-lg-6 offset-lg-3 text-center">
+            <h5>Такой e-mail уже подтвержден либо не зарегистрирован</h5>
+            <p>Попробуйте войти в личный кабинет. В случае неудачи - пройдите регистрацию еще раз.</p>
+        </div>
+    </div>
+    <div class="row mt-5 d-none" id="expired">
+        <div class="col-lg-6 offset-lg-3 text-center">
+            <h5>Ссылка просрочена</h5>
+            <p>Пройдите пожалуйста регистрацию еще раз.</p>
+        </div>
+    </div>
+    <div class="row mt-5 d-none" id="error">
+        <div class="col-lg-6 offset-lg-3 text-center">
+            <h5>Что-то пошло не так, попробуйте пожалуйста позже</h5>
+        </div>
+    </div>
+    <div class="row my-5 d-none" id="to_login_s">
+        <div class="col text-center">
+            <a class="btn sx-btn-on" href="#" id="to_login_btn">В личный кабинет</a>
+        </div>
+    </div>
+    <div class="row my-5 d-none" id="to_reg_s">
+        <div class="col text-center">
+            <a class="btn sx-btn-on" href="#" id="to_register_btn">Регистрация</a>
+        </div>
+    </div>
+    <div class="row my-5 d-none" id="to_main_s">
+        <div class="col text-center">
+            <a class="btn sx-btn-on" href="/" id="go_to_main">На главную</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const status = document.getElementById('container').dataset.status;
+    let id, btn_id;
+    if (status === '1') {
+        id = 'confirm_email';
+        btn_id = 'to_login_s';
+    } else if (status === '2') {
+        id = 'not_found';
+        btn_id = 'to_login_s';
+    } else if (status === '3') {
+        id = 'expired';
+        btn_id = 'to_reg_s';
+    } else if (status === '0') {
+        id = 'error';
+        btn_id = 'to_main_s';
+    }
+
+    document.getElementById(id).classList.remove('d-none');
+    document.getElementById(btn_id).classList.remove('d-none');
+
+    document.getElementById('login_email').value = '<?=$confirm->getEmail()?>';
+    
+    // добавляем обработчик кнопки В личный кабинет
+    document.getElementById('to_login_btn').addEventListener('click', function (e) {
+        document.getElementById('login_link').click();
+    });
+    // обработчик кнопки Регистрация
+    document.getElementById('to_register_btn').addEventListener('click', function (e) {
+        document.getElementById('registration_link').click();
+    });
+</script>

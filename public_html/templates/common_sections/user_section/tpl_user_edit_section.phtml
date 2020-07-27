@@ -1,0 +1,123 @@
+<!-- Секция редактирования реквизитов пользователя-->
+<?php # активируем компонент заполнения полей ЛК
+$paData = new \components\PADataFillComponent();
+?>
+<!--Подключаем js скрипт страницы-->
+<script defer {TYPE_MODULE} src="{JS_USER_TAB}"></script>
+<!--HTML страницы -->
+<div class="tab-pane fade" id="nav-user-details" role="tabpanel" aria-labelledby="nav-user-details-tab">
+    <div class="container">
+        <form id="user_form" method="POST" action="#">
+
+            <div class="form-row my-3">
+                <div class="col">
+                    <div class="custom-control custom-checkbox"> <!--form-check-->
+                        <input class="custom-control-input" type="checkbox" id="edit-toggle"> <!--form-check-input form-check-label-->
+                        <label class="custom-control-label" for="edit-toggle">Редактировать</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row my-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_surname">Фамилия*</label>
+                        <input type="text" class="form-control" id="user_surname" name="user_surname" value="<?=$paData->getUserData('userSurname');?>"
+                            pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" required readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_name">Имя*</label>
+                        <input type="text" class="form-control" id="user_name" name="user_name" value="<?=$paData->getUserData('userName');?>"
+                            pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" required readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_patronymic">Отчество</label>
+                        <input type="text" class="form-control" id="user_patronymic" name="user_patronymic" value="<?=$paData->getUserData('userPatronymic');?>"
+                            pattern="^[a-zA-Zа-яА-ЯёЁ -]{2,20}$" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row my-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_phone">Телефон</label>
+                        <input type="tel" class="form-control" id="user_phone" name="user_phone" value="<?=$paData->getUserData('userPhone');?>"
+                            pattern="[0-9\-()+ ]{5,20}" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row my-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_email">E-mail*</label>
+                        <input type="email" class="form-control" id="user_email" name="user_email" value="<?=$paData->getUserData('userEmail');?>"
+                            maxlength="40" required readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row mt-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">    
+                            <input class="custom-control-input" type="checkbox" id="edit-password" name="edit-password" value="true" 
+                                disabled>
+                            <label class="custom-control-label" for="edit-password">Новый пароль</label>
+                        </div>
+                        <input type="password" class="form-control mt-2" id="password1" name="user_password1" minlength="6"
+                            maxlength="20" readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="password2">Повторите пароль</label>
+                        <input type="password" class="form-control" id="password2" minlength="6" maxlength="20"
+                            readonly>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <h5>
+                        <span class="mb-3 badge" id="password_ok"></span>
+                    </h5>
+                </div>
+            </div>
+            <div class="form-row mb-2">
+                <div class="col">
+                    <small class="form-text text-muted">Пароль должен содержать от 6 до 20 латинских символов,
+                        включая числа и минимум одну заглавную букву
+                    </small>
+                </div>
+            </div>
+            <div class="form-row my-3">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="user_confirm_password">Текущий пароль*</label>
+                        <input type="password" class="form-control" id="user_confirm_password" name="user_confirm_password"
+                            minlength="6" maxlength="20" required readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row my-2">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <button class="btn sx-btn-off" type="submit" id="user_submit" disabled value="Сохранить">Сохранить
+                        <span class="spinner-border spinner-border-sm text-light d-none" id="user_edit_spinner" role="status"
+                            aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <h5>
+                        <span class="mb-3 badge" id="update_ok"></span>
+                    </h5>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

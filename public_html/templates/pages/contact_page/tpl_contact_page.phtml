@@ -1,0 +1,27 @@
+<!-- Страница Статей -->
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <meta name="robots" content="none">
+    <!--Page CSS-->
+    <link rel="stylesheet" href="/templates/pages/contact_page/css/contact.css">
+    <!-- подключаем динамику страницы -->
+    <script defer {TYPE_MODULE} src="{JS_CONTACT_PAGE}"></script>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # секция подменю Серая полоса
+        require GREY_BAR_CONTACT_PAGE_S;
+        # секция контента
+        require TPL_CONTACT_SECTION;
+
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+</html>

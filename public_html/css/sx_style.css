@@ -1,0 +1,105 @@
+body {
+  overflow: scroll;
+}
+
+.sx-colors {
+  background-color: #14d2c7;
+  border-color: #14d2c7;
+}
+.sx-color {
+  color: #14d2c7;
+}
+.sx-border {
+  border-color: #14d2c7;
+}
+.sx-btn-outline {
+  border-color: #14d2c7;
+  color: #14d2c7;
+  background-color: white;
+}
+
+.sx-btn-on {
+  background-color: #14d2c7;
+  border-color: #14d2c7;
+  color: white;
+}
+.sx-btn-off {
+  background-color: white;
+  border-color: #c2c2c2;
+  color: #c2c2c2;
+}
+.sx-btn-primary {
+  background-color: #cd2e2f !important;
+  border-color: #cd2e2f !important;
+  color: white;
+}
+.sx-btn-primary-outline {
+  /*background-color: #cd2e2f !important;*/
+  border-color: #cd2e2f !important;
+  color: #cd2e2f;
+}
+.sx-link {
+  color: #2f9ed7;
+}
+.sx-text {
+  color: #1b928c;
+}
+
+.sx-common-nav-color {
+  background-color: #383838;
+}
+
+@media(min-width: 992px) {
+  .nav-common {
+    height: 2.8rem;
+  }
+}
+
+.visual {
+  border: 1px green dashed;
+}
+
+.slogan-nav {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+/* Sticky footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-bottom: 13rem;
+  margin-bottom: 0rem; /* Margin bottom by footer height */
+}
+@media(min-width: 992px) {
+  body {
+    padding-bottom: 8rem;
+  }
+}
+
+footer.sx-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+footer div.jumbotron {
+  background-color: #343a40 !important;
+}
+
+footer a {
+  color: grey;
+}
+footer a:hover {
+  color: grey;
+}
+
+/* списки для навигации быстрых ссылок*/
+.fast-links-nav {
+  list-style: none;
+}

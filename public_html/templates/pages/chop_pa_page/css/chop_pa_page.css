@@ -1,0 +1,65 @@
+#black_nav {
+    min-height: 2.5rem;
+}
+
+.logo_input {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.chop_photo, .chop_photo_name {
+    width: 18rem;
+    height: 100%;
+}
+
+.chop_feedback {
+    width: 18rem;
+}
+.chop_feedback_input {
+    width: 15.5rem;
+}
+
+.chop_photo_input {
+    opacity: 0;
+    width: 10px;
+}
+
+.chop_photo_label {
+    max-width: 15rem;
+    cursor: pointer;
+}
+
+.far {
+    cursor: pointer;
+    color: grey;
+}
+
+.who_client_element {
+    width: 16rem;
+}
+@media (min-width: 576px) {
+    .who_client_element {
+        width: 18rem;
+    }
+}
+
+#id_slogan {
+    visibility: hidden;
+}
+
+input.form-control-plaintext {
+    text-align: center;
+}
+
+.price-type-bg {
+    background-color: gainsboro;
+    font-weight: bold;
+}
+
+img.chop_logo {
+    max-width: 200px;
+    max-height: 200px;
+    image-orientation: from-image;
+}

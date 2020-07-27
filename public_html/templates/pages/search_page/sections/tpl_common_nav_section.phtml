@@ -1,0 +1,59 @@
+<!-- секция общей навигации страницы Физики/Юрики + Локация -->
+<?php // активируем компонент определения адреса по URL
+$location = new \components\LocationByURLComponent();
+?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-common">
+    <!--sx-common-nav-color-->
+    <div class="container pl-2">
+        <ul class="nav navbar-nav mr-auto" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="toggle-phys" data-toggle="tab" href="#nav-phys" role="tab" aria-controls="nav-phys"
+                    aria-selected="true">
+                    <span class="sx-color">Физическим лицам</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="toggle-org" data-toggle="tab" href="#nav-org" role="tab" aria-controls="nav-org" aria-selected="false">
+                    <span class="">Организациям</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mr-2">
+            <div class="row mt-3 mt-md-0">
+                <div class="col-md-8 pr-md-0">
+                    <input id="city" class="form-control form-control-sm bg-dark text-light text-left py-0 pl-2 mr-1 mb-1 mb-md-0 border-secondary typeahead"
+                        type="search" size="40" data-city="<?=$location->getFullAddress()?>">
+                </div>
+                <div class="col-md-3 pl-md-1 pr-md-0">
+                    <select id="country" name="country" class="form-control form-control-sm bg-dark text-light text-left border-secondary py-0 pl-1"
+                        data-country="<?=$location->getCountry()?>">
+                        <option value="Россия">Россия</option>
+                        <option value="Украина">Крым</option>
+                        <option value="Украина">Украина</option>
+                        <option value="Беларусь">Беларусь</option>
+                        <option value="Казахстан">Казахстан</option>
+                        <option value="Эстония">Эстония</option>
+                        <option value="Латвия">Латвия</option>
+                        <option value="Литва">Литва</option>
+                        <option value="Азербайджан">Азербайджан</option>
+                        <option value="Армения">Армения</option>
+                        <option value="Грузия">Грузия</option>
+                        <option value="Грузия">Абхазия</option>
+                        <option value="Грузия">Южная Осетия</option>
+                        <option value="Киргизия">Кыргызстан</option>
+                        <option value="Молдова">Молдова</option>
+                        <option value="Таджикистан">Таджикистан</option>
+                        <option value="Туркменистан">Туркменистан</option>
+                        <option value="Узбекистан">Узбекистан</option>
+                    </select>
+                </div>
+                <div class="col-md-1 my-1 my-md-0 pt-1 pl-4 pl-md-3">
+                    <a href="#" id="locate">
+                        <img src="/imgs/icons/геометка.png" alt="Specify location">
+                        <small class="sx-link d-md-none">Уточнить местоположение</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

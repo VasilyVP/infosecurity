@@ -1,0 +1,208 @@
+<div class="jumbotron bg-light my-2 py-1" id="params-nav">
+    <div class="container pl-2">
+        <div class="tab-content d-none" id="nav-tabParams">
+            <!--Физические лица-->
+            <div class="tab-pane fade show active" id="nav-phys" role="tabpanel" aria-labelledby="nav-phys">
+                <div class="form-row my-1">
+                    <div class="col-lg-8 pt-2 pb-1">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="d-flex flex-wrap flex-sm-nowrap">
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0"
+                                        data-parameter="service-type" name="service-type">
+                                        <option value="signaling">Сигнализация</option>
+                                        <option value="CCTV">Видеонаблюдение</option>
+                                        <option value="guard">Личная охрана, телохранитель</option>
+                                        <option value="GPS">GPS мониторинг автотранспорта</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="signaling" name="connect-type">
+                                        <option value="wired">Проводная</option>
+                                        <option value="wireless">Беспроводная</option>
+                                        <option value="no_matter">Не важно</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="signaling" name="signaling-place-type">
+                                        <option value="flat">Квартира</option>
+                                        <option value="house">Дом, дача или коттедж</option>
+                                        <option value="garage">Гараж</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="CCTV" name="CCTV-place-type">
+                                        <option value="flat">В квартиру</option>
+                                        <option value="house">В дом, дачу или коттедж</option>
+                                        <option value="entrance">В подъезд</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="guard" name="guard-armed">
+                                        <option value="unarmed">Без оружия</option>
+                                        <option value="armed">Вооруженная</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div id="phys-signal-opts" class="d-none" data-parameter="signaling">
+                                    <div class="form-row mt-2 pl-1">
+                                        <div class="d-flex flex-wrap py-1">
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="sec_signaling"
+                                                        id="sec_signaling">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="sec_signaling">Охранная сигнализация</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="fire_signaling"
+                                                        id="fire_signaling">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="fire_signaling">Пожарная сигнализация</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="alarm_button"
+                                                        id="alarm_button">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="alarm_button">Тревожная кнопка</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="water_leak" id="water_leak">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="water_leak">Протечка воды</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="gas_leak" id="gas_leak">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="gas_leak">Утечка газа</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="glass_break" id="glass_break">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="glass_break">Датчик разбития стекла</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center text-lg-right">
+                        <button class="btn sx-btn-on my-2 my-lg-1 mr-lg-2" id="showOffersPhys">Показать предложения</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Организации-->
+            <div class="tab-pane fade" id="nav-org" role="tabpanel" aria-labelledby="nav-org">
+                <div class="form-row my-1">
+                    <div class="col-lg-8 py-1">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="d-flex flex-wrap flex-sm-nowrap">
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0"
+                                        data-parameter="service-type" name="service-type">
+                                        <option value="signaling">Сигнализация</option>
+                                        <option value="CCTV">Видеонаблюдение</option>
+                                        <option value="guard">Физическая охрана</option>
+                                        <option value="GPS">GPS мониторинг автотранспорта</option>
+                                        <option value="cargo_escort">Сопровождение грузов</option>
+                                        <option value="collection">Инкассация</option>
+                                        <option value="access_control">Домофоны и контроль доступа</option>
+                                        <option value="maintenance">Техобслуживание</option>
+                                        <option value="design_installation">Проектирование и монтаж ОПС</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="signaling" name="connect-type">
+                                        <option value="wired">Проводная</option>
+                                        <option value="wireless">Беспроводная</option>
+                                        <option value="no_matter">Не важно</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="CCTV" name="CCTV-place-type">
+                                        <option value="office">В офис</option>
+                                        <option value="shop">В магазин</option>
+                                        <option value="warehouse">На склад</option>
+                                        <option value="car_wash">Автомойка</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="guard" name="guard-armed">
+                                        <option value="unarmed">Без оружия</option>
+                                        <option value="armed">Вооруженная</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="guard" name="guard-mode">
+                                        <option value="dayly">Дневная охрана</option>
+                                        <option value="nightly">Ночная охрана</option>
+                                        <option value="24">Круглосуточная</option>
+                                    </select>
+                                    <select class="form-control form-control-sm flex-fill bg-light mx-1 mb-1 mb-lg-0 d-none"
+                                        data-parameter="cargo-escort" name="cargo-escort-armed">
+                                        <option value="unarmed">Без оружия</option>
+                                        <option value="armed">Вооруженная охрана</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="d-none" data-parameter="signaling">
+                                    <div class="form-row mt-2 pl-1">
+                                        <div class="d-flex flex-wrap py-1">
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="sec_signaling"
+                                                        id="sec_signaling_y">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="sec_signaling_y">Охранная сигнализация</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="fire_signaling"
+                                                        id="fire_signaling_y">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label for="fire_signaling_y">Пожарная сигнализация</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex my-1 mx-2">
+                                                <div class="col-auto pt-1 pl-0 pr-2">
+                                                    <input class="m_switch_check" type="checkbox" name="alarm_button"
+                                                        id="alarm_button_y">
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                    <label class="text-nowrap" for="alarm_button_y">Тревожная кнопка</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center text-lg-right">
+                        <button class="btn sx-btn-on my-2 my-lg-1 mr-lg-2" id="showOffersOrg">Показать предложения</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

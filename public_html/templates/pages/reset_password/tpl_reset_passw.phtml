@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <!-- подключаем динамику страницы -->
+    <script src="/templates/pages/reset_password/js/page.js" type="module" defer></script>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SIMPLE_SECTION;
+        # секция ввода нового пароля
+        require TPL_PASSW_SECTION;        
+    ?>
+</body>
+</html>

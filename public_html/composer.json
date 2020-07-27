@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mailgun/mailgun-php": "^2.6",
+        "php-http/guzzle6-adapter": "^1.1",
+        "guzzlehttp/guzzle": "~6.0",
+        "thiagoalessio/tesseract_ocr": "^2.7"
+    }
+}

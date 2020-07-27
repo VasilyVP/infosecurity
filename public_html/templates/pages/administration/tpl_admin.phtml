@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем секцию <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    
+    <!-- Page JS -->
+    <script defer src="/templates/pages/administration/js/roles_tab.js" type="module"></script>
+    <script defer src="/templates/pages/administration/js/mailings_tab.js" type="module"></script>
+</head>
+
+<body>
+    <?php
+        # секция Общая навигация страницы
+        require TPL_NAV_SECTION;
+
+        # раздел "ЛК ЧОП"
+        // секция меню - черная полоска
+        require TPL_ADMIN_BL_NAV_S;
+        // секция меню со вкладками
+        require TPL_ADMIN_TABS_S;
+
+        # раздел администрирования пользователей
+        // секция редактирования ролей пользователей
+        require TPL_USERS_ROLE_SECTION;
+
+        # раздел пользовательских данных
+        // секция реквизитов пользователя
+        require TPL_USER_SECTION;
+
+        #раздел управления рассылками
+        require TPL_MAILING_SECTION;
+
+    ?>
+
+<!--Последний div навигации id="nav-tabContent"-->
+    </div>
+</body>
+
+</html>

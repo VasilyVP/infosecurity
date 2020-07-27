@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php # подключаем секцию <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <!--Page CSS-->
+    <link rel="stylesheet" href="/templates/pages/search_page/css/search_page.css">
+    <!--Переключатели-->
+    <link rel="stylesheet" href="/css/jquery.mswitch.css" type="text/css">
+    <!-- подключаем библиотеку переключателей -->
+    <script defer type="text/javascript" src="/js/library/jquery.mswitch.js"></script>
+    <!-- подключаем динамику страницы -->
+    <script defer {TYPE_MODULE} src="{JS_SEARCH_PAGE}"></script>
+</head>
+
+<body>
+    <?php
+        /** Если пришли по ссылке город (есть citiesList //service-type=all в поисковой строке) - Проверяем на робота: */
+        // подключаем компонент проверки страницы на наличие робота
+        $crc = new \components\CheckRobotsComponent();
+        if (!$crc->getBotCheckByQueryStr('citiesList')) { //citiesList all
+            // если проверка не успешная - пересылаем на главную страницу
+            header('Location: /');
+            exit;
+        }
+
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # секция общей навигации(физики/юрики + локация)
+        require TPL_COMMON_NAV_SECTION;
+        # секция навигации физиков и юриков
+        require TPL_PARAMS_NAV_SECTION;
+        # секция Результаты
+        require TPL_RESULTS_SECTION;
+        # секция Footer
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем секцию <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <!--Page CSS-->
+    <link rel="stylesheet" href="/templates/pages/chop_page/css/chop_page.css">
+    <!-- Page JS -->
+    <script defer {TYPE_MODULE} src="{JS_CHOP_PAGE}"></script>
+</head>
+
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # секция стандартное верхнее меню на черной полоске
+        require TPL_CHOP_BL_NAV_S;
+
+        # раздел "сайт ЧОП"
+        // секция шапки ЧОП
+        require TPL_CHOP_HEAD_S;
+        // секция О компании
+        require TPL_CHOP_ABOUT_SERVICE_S;
+        // секция контента ЧОП
+        require TPL_CHOP_PHOTO_KEY_FACTS_S;
+        // секция отзывов, котнактов и увеличения картинок
+        require TPL_CHOP_FEEDBACK_CONTACTS_S;
+        # секция footer
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем секцию <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+    <!-- page CSS -->
+    
+    <!-- Page JS -->
+    <script defer src="/templates/pages/test_page/js/page.js" type="module"></script>
+    
+</head>
+
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SIMPLE_SECTION;
+        # секция подтверждения отписки
+        require TPL_UNSUBSCRIBE_S;        
+    ?>
+</body>
+
+</html>

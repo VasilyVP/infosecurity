@@ -1,0 +1,43 @@
+<!--Секция навигации сайта: Аутентифицированного пользователя-->
+<nav class="navbar navbar-expand-sm navbar-light bg-white">
+    <!--sticky-top -->
+    <div class="container nav-container">
+        <a class="navbar-brand" href="/" title="Главная">
+            <img src="/imgs/logos/scanox_logo.png" width="80%">
+        </a>
+        <span class="navbar-text text-dark slogan-nav h4 pb-0 d-none d-lg-block" id="id_slogan">
+            Здесь ищут Безопасность
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <nav class="navbar-nav">
+                <a class="nav-item nav-link" href="/<?=$rout->getHomePage()?>" id="user_login"><?=$auth->getUserLogin()?></a> 
+                <a class="nav-item nav-link" href="/logout" id="user_logout">Выход</a>
+            </nav>
+        </div>
+    </div>
+</nav>
+<!-- серая полоса -->
+<!--
+<div class="d-inline-block w-100" style="background-color:#cccccc; color:#cccccc">.</div>
+-->
+
+<script>
+    // при загрузке запоминаем текущего пользователя со вкладки Пользователь
+    const userLogin = document.getElementById('user_login');
+    localStorage.userLogin = userLogin.innerText;
+    
+    // при переключении на вкладку проверяем не поменялся ли пользователь и если поменялся - переходим на главную страницу
+    window.onfocus = function(e) {       
+        if (localStorage.userLogin != userLogin.innerText) location.href = location.origin;
+    }
+
+    // при клике на Выход очищаем localStorage.userLogin и куку userLogin
+    document.getElementById('user_logout').onclick = function() {
+        localStorage.removeItem('userLogin');
+        
+        document.cookie = 'userLogin=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }
+</script>

@@ -1,0 +1,47 @@
+<!--Title-->
+<title>{TITLE}</title>
+
+<!--META Section-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="{DESCRIPTION}" id="description">
+<meta id="robots_meta">
+
+<?php # Аналитика поисковых систем
+    // получаем признак необходимости подключения аналитики
+    $analytics = engines\RoutingEngine::create()->getAnalytics();
+
+    // добавляем для production и не для SSR, а также где стоит признак
+    if (EXECUTION_AT == 'production' && $_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR'] && $analytics) {
+        require SEARCH_ENGINE_STAT;
+    }
+?>
+
+<!--CSS section-->
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--typeahead styles-->
+<link rel="stylesheet" href="/css/typeahead_BS.css">
+<!--Fontawesome lib-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous" prefetch> <!--rel="stylesheet" rel="preload" as="style" type="text/css"  -->
+<!--Шрифты Google Open Sans-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<!-- общие стили -->
+<link rel="stylesheet" href="/css/sx_style.css">
+
+<!--SCRIPTS Section-->
+<!--JQuery-->
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Popper js-->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--Bootstrap js-->
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--typeahead js-->
+<script defer src="/js/library/typeahead.js"></script>
+<!--reCAPTCHA-->
+<script defer src="https://www.google.com/recaptcha/api.js?render=6LdBqnQUAAAAABzkxiwzLLKqoUVJE9IlfRK8J2fY"></script>
+
+<!--Favicon-->
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">

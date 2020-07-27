@@ -1,0 +1,22 @@
+<!-- Страница Статей -->
+<!doctype html>
+<html lang="{LANGUAGE}">
+
+<head>
+    <?php
+        # подключаем общие разделы <HEAD>
+        require COMMON_HEAD_S;
+    ?>
+<body>
+    <?php
+        # секция Навигации
+        require TPL_NAV_SECTION;
+        # секция подменю Серая полоса
+        require GREY_BAR_ARTICLES_S;
+        # секция контента
+        require TPL_ARTICLES_SECTION;
+
+        require TPL_FOOTER_SECTION;
+    ?>
+</body>
+</html>

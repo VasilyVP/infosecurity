@@ -1,0 +1,57 @@
+<!--Секция окна логина пользователя-->
+<script defer {TYPE_MODULE} src="{JS_LOGIN_SECTION}"></script>
+<!--Код секции-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="loginModalLabel">Вход</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="login_group">
+                        <form id="user_login_form" action="#" class="px-lg-5">
+                            <img class="d-block mx-auto my-4" src="/imgs/logos/scanox_logo.png"
+                                style="inline-size: 5rem" id="logo_img">
+                            <input type="email" id="login_email" name="login_email"
+                                class="form-control form-control-sm mb-3" placeholder="E-mail" maxlength="40"
+                                data-container="body" data-toggle="popover" data-placement="right"
+                                data-content="Введите e-mail" required autofocus>
+                            <input type="password" id="login_password" name="login_password"
+                                class="form-control form-control-sm mb-3" placeholder="Пароль" minlength="1"
+                                maxlength="20" required>
+                            <div class="d-flex justify-content-between">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="remember_me"
+                                        name="remember_me" value="true">
+                                    <label for="remember_me" class="custom-control-label small">Запомнить меня</label>
+                                </div>
+                                <a id="forget_password" href="#" class="bd-highlight small">Забыли пароль?</a>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span id="login_notification"></span>
+                                </div>
+                            </div>
+                        </form>
+                        <input id="login_btn" form="user_login_form" type="submit"
+                            class="btn btn-sm sx-btn-on d-block mx-auto my-3 w-25" value="Войти">
+                    </div>
+                    <div class="d-none" id="pass_recovery_group">
+                        <img class="d-block mx-auto mt-4 mb-5" src="/imgs/icons/Конверт.png" style="inline-size: 5rem"
+                            id="envelop_img">
+                        <p class="text-center text-muted mx-auto">На электронную почту <span class="text-body"
+                                id="recovery_email"></span> отправлено письмо для восстановления пароля</p>
+                        <button class="btn btn-sm sx-btn-on d-block mx-auto my-5 w-25" data-dismiss="modal"
+                            id="close_btn">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

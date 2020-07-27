@@ -1,0 +1,99 @@
+<!-- форма описания ЧОП в ЛК -->
+<div class="tab-pane fade show active" id="nav-chop-description" role="tabpanel"
+    aria-labelledby="nav-chop-description-tab">
+    <form id="chop_form" method="POST" action="#">
+        <div class="container">
+
+            <div class="row my-2">
+                <!-- лого ЧОП -->
+                <div class="col-md-3">
+                    <div class="row mb-1">
+                        <div class="col">
+                            <div class="d-flex border text-center mx-auto justify-content-center align-items-center p-1"
+                                style="width: 210px; height: 210px">
+                                <img class="chop_logo" id="chop_logo_img" src="#" alt="Загрузите логотип">
+                                <input id="logo_flag" name="logo_flag" value="false" form="chop_form" hidden>
+                            </div>
+                            <small class="form-text text-muted text-center"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <input type="file" class="logo_input" id="logo_file" accept="image/*">
+                            <label for="logo_file">
+                                <button type="button" class="btn btn-secondary">Выберите файл
+                                    <span class="spinner-border spinner-border-sm text-info d-none" id="logo_spinner"
+                                        role="status" aria-hidden="true"></span>
+                                </button>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span class="badge" id="logo_ok"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- поле ввода наименования ЧОП -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="organization">Организация</label>
+                                <input type="text" class="form-control" id="organization" name="organization"
+                                    maxlength="60" form="chop_form" required
+                                    placeholder="Введите полное название организации">
+                                <small class="form-text text-muted">
+                                    Например: ООО ЧОП "Охранное агентство "Илья Муромец"
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="brand_name">Отображаемое название</label>
+                                <input type="text" class="form-control" id="brand_name" name="brand_name" maxlength="60"
+                                    form="chop_form" required placeholder="Как его увидят посетители">
+                                <small class="form-text text-muted">
+                                    Например: Охранное агентство "Илья Муромец"
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="mr-md-5" for="phone_code">Код страны</label> <!--d-flex flex-column align-items-md-end-->
+                            <select class="form-control" id="phone_code" name="phone_code" form="chop_form">
+                                <option value="Россия +7">Россия +7</option>
+                                <option value="Украина +380">Украина +380</option>
+                                <option value="Беларусь +375">Беларусь +375</option>
+                                <option value="Казахстан +7">Казахстан +7</option>
+                                <option value="Эстония +372">Эстония +372</option>
+                                <option value="Латвия +371">Латвия +371</option>
+                                <option value="Литва +370">Литва +370</option>
+                                <option value="Азербайджан +994">Азербайджан +994</option>
+                                <option value="Армения +374">Армения +374</option>
+                                <option value="Грузия +995">Грузия +995</option>
+                                <option value="Абхазия +7">Абхазия +7</option>
+                                <option value="Южная Осетия +7">Южная Осетия +7</option>
+                                <option value="Кыргызстан +996">Кыргызстан +996</option>
+                                <option value="Молдова +373">Молдова +373</option>
+                                <option value="Таджикистан +992">Таджикистан +992</option>
+                                <option value="Туркменистан +993">Туркменистан +993</option>
+                                <option value="Узбекистан +998">Узбекистан +998</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="main_phone">Основной телефон</label>
+                                <input type="tel" class="form-control" id="main_phone" name="main_phone"
+                                    pattern="[0-9\-()+ ]{5,20}" form="chop_form" required placeholder="Как его увидят">
+                                <!--<small class="form-text text-muted">
+                                    Например: 8 (800) 000-00-00
+                                </small>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
