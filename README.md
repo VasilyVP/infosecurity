@@ -21,7 +21,7 @@ Maintenance their personal landing page and check search results for their poten
     Due huge amount possible places covered by this service and several countries included in service scope, locations didn't store by the service in the begining of the service work. Locations data base was built dynamically by the new users looking for places (manually or automatically) and new service providers registered in the service in accordance Google places organization;
 4) Search page by various criteria: nearest service providers who can give required scope of services and odered in accordance different conditions like as their profile.
 5) Simple Service provider landing page
-6) Authentication and role based athorization (service provider, moderator, admin) included credentials confirmation and password resets.
+6) Authentication and role based authorization (service provider, moderator, admin) included credentials confirmation and password resets.
 7) SSP user account with functionality:
     1) Profile - needs for search engine, landing page building, price calculator building
     2) Price calculator: constructor to build prices and conditions based on profile.
