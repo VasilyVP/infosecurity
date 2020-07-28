@@ -31,9 +31,7 @@ Maintenance their personal landing page and check search results for their poten
 10) Mailing engine: transactional mails and marketing mailings. Used Mailgun mailing service.
 11) SEO (search engine optimization):
     1. Pages title, headline and search engine content auto generation in accordance search words scope, search promotion and of course usability.
-    2. Sitemap autogeneration:
-        2.1. SSP profiles
-        2.2. targeted search requests
+    2. Sitemaps autogeneration: SSP profiles, targeted search requests
     3. Server side rendering and pre-rendering with results caching in order to solve search engines indexing issue and fast response
     4. Recognition of the search robots requests in order to give them prerendered page.
     5. Front-end and back-end synced routings in accordance of different search requests (locations, conditions...).
